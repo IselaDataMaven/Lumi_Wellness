@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import type { LumiPet } from "../types/lumi";
+import type { LumiPet, LumiMood } from "../types/lumi";
 import { lumiService } from "../services/lumiService";
 
 interface LumiState {
@@ -49,9 +49,18 @@ export function useLumi() {
     setState((prev) => ({ ...prev, lumi }));
   }, []);
 
+  const updateMood = useCallback(async (mood: LumiMood) => {
+    try {
+      const lumi = await lumiService.updateMood(mood);
+      setState((prev) => ({ ...prev, lumi }));
+    } catch {
+      // silent fail
+    }
+  }, []);
+
   useEffect(() => {
     fetchLumi();
   }, [fetchLumi]);
 
-  return { ...state, careForLumi, gainExperience, refreshLumi };
+  return { ...state, careForLumi, gainExperience, refreshLumi, updateMood };
 }

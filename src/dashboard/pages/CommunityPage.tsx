@@ -1,4 +1,4 @@
-export default function CommunityPage() {
+D:export default function CommunityPage() {
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center px-5 pb-24 bg-lumi-gradient">
       <div className="flex flex-col items-center gap-4 text-center max-w-sm">
