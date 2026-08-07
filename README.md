@@ -89,7 +89,8 @@ It combines:
 - Recent activity
 - Lumi's status
 
-<img src="./docs/images/lumi-dashboard.png" alt="Lumi Dashboard" width="750"/>
+<img width="959" height="3131" alt="lumi_dashboard" src="https://github.com/user-attachments/assets/ff425ae2-b625-4051-8c59-57f172e5c222" />
+
 
 ---
 
@@ -106,7 +107,8 @@ Users can see:
 - Growth
 - Companion status
 
-<img src="./docs/images/lumi-profile.png" alt="Lumi Companion" width="650"/>
+<img width="959" height="2059" alt="lumi_progress" src="https://github.com/user-attachments/assets/4bc1608f-9f95-47d9-b759-e60995b04d32" />
+
 
 The idea is to make progress feel **personal, visible and rewarding**.
 
@@ -126,7 +128,8 @@ Users can explore:
 - Check-in streaks
 - Monthly activity
 
-<img src="./docs/images/lumi-progress.png" alt="Lumi Progress" width="700"/>
+<img width="959" height="1175" alt="lumi_profile" src="https://github.com/user-attachments/assets/63a7ec0c-3115-450d-b2b5-06d0bfb553ce" />
+
 
 > **The goal isn't just to collect data.  
 > The goal is to help users understand their progress.**
