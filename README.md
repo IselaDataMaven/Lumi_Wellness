@@ -1,3 +1,6 @@
+<img width="1774" height="887" alt="LUMI_WELLNESS" src="https://github.com/user-attachments/assets/eeaa9c40-f9fe-4f14-8b7b-809d6618e227" />
+
+
 <div align="center">
 
 # 🌸 Lumi Wellness
