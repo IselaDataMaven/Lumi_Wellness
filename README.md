@@ -20,7 +20,8 @@
 
 <br/>
 
-<img src="./docs/images/lumi-dashboard.png" alt="Lumi Wellness Dashboard" width="850"/>
+<img width="1921" height="3130" alt="dashboard_lumi" src="https://github.com/user-attachments/assets/6228a8f9-2ee7-47b5-b054-02e5ba2eccd6" />
+
 
 <br/>
 
