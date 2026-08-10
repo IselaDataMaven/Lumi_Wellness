@@ -98,6 +98,82 @@ const MOCK_DATA: DashboardData = {
   ],
 };
 
+// ─── Daily Greeting Builder ───────────────────────────────────────────────────
+
+export interface DailyGreeting {
+  title: string;
+  subtitle: string;
+  suggestedAction: string;
+  actionPath: string;
+  icon: string;
+}
+
+interface GreetingContext {
+  mood: number;
+  energy: number;
+  stress: number;
+  sleepHours: number;
+  water: number;
+}
+
+export function buildDailyGreeting(ctx: GreetingContext): DailyGreeting {
+  if (ctx.energy <= 3) {
+    return {
+      title: "Take it slow today 🌿",
+      subtitle: "Your energy is low — and that's okay. Be gentle.",
+      suggestedAction: "Try a short stretch",
+      actionPath: "/exercises?category=stretch",
+      icon: "🌿",
+    };
+  }
+  if (ctx.stress >= 7) {
+    return {
+      title: "You deserve a pause 🌸",
+      subtitle: "Stress is high. Let's bring it down together.",
+      suggestedAction: "Let's breathe together",
+      actionPath: "/exercises?category=meditation",
+      icon: "🌸",
+    };
+  }
+  if (ctx.sleepHours < 5) {
+    return {
+      title: "Be kind to yourself 😴",
+      subtitle: "Sleep was short. Give yourself extra grace today.",
+      suggestedAction: "Don't forget to rest",
+      actionPath: "/checkin",
+      icon: "😴",
+    };
+  }
+  if (ctx.mood >= 4 && ctx.energy >= 6) {
+    return {
+      title: "You're doing great ✨",
+      subtitle: "Your mood and energy are strong. Keep the momentum.",
+      suggestedAction: "Keep the momentum",
+      actionPath: "/lumi-ai",
+      icon: "✨",
+    };
+  }
+  if (ctx.water >= 6) {
+    return {
+      title: "Hydration champion 💧",
+      subtitle: "You're taking great care of yourself today.",
+      suggestedAction: "Check in with Lumi",
+      actionPath: "/lumi-ai",
+      icon: "💧",
+    };
+  }
+  // Default
+  return {
+    title: "Welcome back 🌱",
+    subtitle: "Every small step counts. What feels right today?",
+    suggestedAction: "Start your check-in",
+    actionPath: "/checkin",
+    icon: "🌱",
+  };
+}
+
+// ─── Dashboard API ────────────────────────────────────────────────────────────
+
 export const dashboardService = {
   async getDashboardData(): Promise<DashboardData> {
     await delay(800);

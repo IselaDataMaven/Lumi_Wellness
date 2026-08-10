@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useAppNavigate } from "../hooks/useAppNavigate";
 import { useExercise } from "../app/context/ExerciseContext";
 import { exercises } from "../data/exercises";
@@ -20,12 +21,29 @@ const difficultyColors = {
 export default function ExerciseLibrary() {
   const navigate = useAppNavigate();
   const { setSelectedExercise } = useExercise();
+  const [searchParams] = useSearchParams();
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
   const [favOnly, setFavOnly] = useState(false);
   const [favorites, setFavorites] = useState<Set<string>>(
     new Set(exercises.filter((e) => e.isFavorite).map((e) => e.id)),
   );
+
+  // Preselect category from query parameter
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      const categoryMap: Record<string, string> = {
+        meditation: "Mindfulness",
+        stretch: "Stretching",
+        breathing: "Breathing",
+        mobility: "Mobility",
+        strength: "Strength",
+      };
+      const mapped = categoryMap[categoryParam.toLowerCase()];
+      if (mapped) setFilter(mapped);
+    }
+  }, [searchParams]);
 
   const filtered = exercises.filter((ex) => {
     const matchCat = filter === "All" || ex.category === filter;
