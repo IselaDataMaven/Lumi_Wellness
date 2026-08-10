@@ -53,6 +53,45 @@ The platform brings together:
 🤖 AI personalization
 
 ---
+# 🌸 Lumi Wellness
+
+> Your gentle AI wellness companion for everyday wellbeing.
+
+### 🚀 Live Demo
+
+**👉 ****[Try Lumi Wellness](https://warm-sunshine-36e48f.netlify.app/)**
+
+Lumi Wellness is an AI-powered wellness companion designed to help users reflect on their wellbeing, track daily habits, explore gentle exercises, and interact with Lumi, their virtual AI companion.
+
+### ✨ Features
+
+* 🤖 Lumi AI companion
+* 💭 Daily wellness check-ins
+* 🧘 Exercise library
+* 💧 Wellness tracking
+* 📖 Personal journal
+* 🏆 Achievements and progress
+* 👥 Community
+* 🔐 Authentication and onboarding
+
+### 🛠️ Tech Stack
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* React Router
+* Netlify
+
+### 🌐 Demo
+
+**Open Lumi Wellness →**
+
+---
+
+*Lumi is an evolving project focused on creating a gentle, accessible digital wellness experience.*
+
+---
 
 ## ✨ Why I Built Lumi
 
